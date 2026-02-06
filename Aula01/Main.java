@@ -33,11 +33,9 @@ public class Main {
                     if (produtos.isEmpty()) {
                         System.out.println("Nenhum produto cadastrado.");
                     } else {
-                        final int[] index = {1};
-                        produtos.forEach(produto -> {
-                            System.out.println(index[0] + ". " + produto);
-                            index[0]++;
-                        });
+                        for (int i = 0; i < produtos.size(); i++) {
+                            System.out.println((i + 1) + ". " + produtos.get(i));
+                        }   
                     }
                     break;
                 case 3:
