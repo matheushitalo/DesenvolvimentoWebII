@@ -1,4 +1,4 @@
-public class Funcionario {  
+public abstract class Funcionario {  
     
     public static final double SALARIO_MINIMO = 1621.00;
     
