@@ -13,12 +13,15 @@ public class Categoria {
     @Column(nullable = false)
     private String nome;
 
+    // Contrutor
+
     public Categoria() {}
 
     public Categoria(String nome) {
         this.nome = nome;
     }
 
+    // Getter e Setter
 
     public Long getId() {
         return id;

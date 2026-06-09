@@ -1,0 +1,115 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-06-09",
+  "__export_source": "insomnia.desktop.app",
+  "resources": [
+    {
+      "_id": "wrk_biblioteca",
+      "_type": "workspace",
+      "name": "Biblioteca API",
+      "description": "Coleção de testes para o Sistema de Gerenciamento de Biblioteca"
+    },
+
+    {
+      "_id": "fld_categorias",
+      "_type": "request_group",
+      "parentId": "wrk_biblioteca",
+      "name": "Categorias"
+    },
+    {
+      "_id": "req_post_categoria",
+      "_type": "request",
+      "parentId": "fld_categorias",
+      "name": "Salvar Categoria",
+      "method": "POST",
+      "url": "http://localhost:8080/categorias",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Terror\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
+      "_id": "req_get_categorias",
+      "_type": "request",
+      "parentId": "fld_categorias",
+      "name": "Listar Todas as Categorias",
+      "method": "GET",
+      "url": "http://localhost:8080/categorias",
+      "body": {},
+      "headers": []
+    },
+
+    {
+      "_id": "fld_livros",
+      "_type": "request_group",
+      "parentId": "wrk_biblioteca",
+      "name": "Livros"
+    },
+    {
+      "_id": "req_post_livro",
+      "_type": "request",
+      "parentId": "fld_livros",
+      "name": "Salvar Livro",
+      "method": "POST",
+      "url": "http://localhost:8080/livros",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"It — A Coisa\",\n  \"isbn\": \"978-8576572114\",\n  \"categoria\": {\n    \"id\": 1\n  }\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
+      "_id": "req_get_livros",
+      "_type": "request",
+      "parentId": "fld_livros",
+      "name": "Listar Todos os Livros",
+      "method": "GET",
+      "url": "http://localhost:8080/livros",
+      "body": {},
+      "headers": []
+    },
+
+    {
+      "_id": "fld_buscas",
+      "_type": "request_group",
+      "parentId": "wrk_biblioteca",
+      "name": "Buscas"
+    },
+    {
+      "_id": "req_busca_titulo_exato",
+      "_type": "request",
+      "parentId": "fld_buscas",
+      "name": "Busca por Título Exato",
+      "method": "GET",
+      "url": "http://localhost:8080/livros/busca/titulo?valor=Duna",
+      "body": {},
+      "headers": []
+    },
+    {
+      "_id": "req_busca_titulo_parcial",
+      "_type": "request",
+      "parentId": "fld_buscas",
+      "name": "Busca por Título Parcial (case-insensitive)",
+      "method": "GET",
+      "url": "http://localhost:8080/livros/busca/titulo-parcial?valor=dom",
+      "body": {},
+      "headers": []
+    },
+    {
+      "_id": "req_busca_categoria",
+      "_type": "request",
+      "parentId": "fld_buscas",
+      "name": "Busca por Categoria (id=3 → Programação)",
+      "method": "GET",
+      "url": "http://localhost:8080/livros/busca/categoria/3",
+      "body": {},
+      "headers": []
+    }
+  ]
+}

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
-    // JpaRepository já fornece: save, findById, findAll, deleteById, etc.
+    
 }

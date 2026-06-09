@@ -16,6 +16,7 @@ public class Livro {
     @Column(nullable = false, unique = true)
     private String isbn;
 
+    //  N:1 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
@@ -27,6 +28,7 @@ public class Livro {
         this.isbn = isbn;
         this.categoria = categoria;
     }
+
 
     public Long getId() {
         return id;
