@@ -14,13 +14,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll()           
+                .anyRequest().permitAll()
             )
             .csrf(csrf -> csrf
-                .ignoringRequestMatchers("/h2-console/**")  
+                .ignoringRequestMatchers("/h2-console/**")
             )
             .headers(headers -> headers
-                .frameOptions(frame -> frame.sameOrigin()) 
+                .frameOptions(frame -> frame.sameOrigin())
             );
 
         return http.build();
